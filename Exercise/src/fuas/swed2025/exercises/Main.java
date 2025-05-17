@@ -15,6 +15,7 @@ public class Main {
 	   user1.registerWebsite("faceboook.com", Frequency.SEC, Channel.SMS);
 	   
 	   Controller controller = Controller.getInstance();
+	   controller.setDaemon(true);
 	   controller.addUser(user);
 	   
 	   user.getSubscription().get(0).getWebsite().setContent("Old Content"); 

@@ -19,7 +19,7 @@ public class Controller extends Thread {
 		users = new ArrayList<>();
 	}
 
-	public static Controller getInstance() {
+	public  static Controller getInstance() {
 		if (controller == null) {
 			controller = new Controller();
 		}
@@ -33,6 +33,7 @@ public class Controller extends Thread {
 
 	@Override
 	public void run() {
+		
 	    try {
 	        while (true) {
 	            for (User user : users) {
@@ -44,14 +45,14 @@ public class Controller extends Thread {
 	                    String currentContent = s.getWebsite().getContent();
 
 	                    if (now - s.getLastChecked() >= interval && !currentContent.equals(s.getLastContent())) {
-	                        Notification n = new Notification("Website content changed!!");
+	                        Notification n = new Notification(s.getWebsite().getUrl()+" Website content changed!!");
 	                        NotificationService.getInstance().deliverNotification(s.getChannel(), user, n);
 	                        s.updateLastChecked();
 	                        s.updateLastContent(currentContent);
 	                    }
 	                }
 	            }
-	            Thread.sleep(30000);  
+	            Thread.sleep(3000);  
 	        }
 	    } catch (InterruptedException e) {
 	        System.out.println("InterruptedException: " +e.getMessage());
