@@ -16,15 +16,11 @@ public class Push implements CommunicationChannel {
 
 	@Override
 	public void sendNotification(User user , Notification notification) {
-		// TODO Auto-generated method stub
+		user.receiveNotification(notification);
 		
 	}
 
-	@Override
-	public Notification receiveNotification(Notification notification) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	
 	
 

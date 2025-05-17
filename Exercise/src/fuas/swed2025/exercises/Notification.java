@@ -6,7 +6,7 @@ public class Notification {
 	private String message;
 	
 	public Notification(String message) {
-		id = idCounter++;
+		id = ++idCounter;
 		this.message = message;
 	}
 	
@@ -23,20 +23,6 @@ public class Notification {
 		return message;
 	}
 	
-	public void deliver(Channel channel,Notification notification) {
-		
-		if (channel.name().equals("EMAIL")) {
-		    Email email = Email.getInstance();
-		    email.receiveNotification(notification);
-		}else if(channel.name().equals("PUSH")) {
-			Push push = Push.getInstance();
-			push.receiveNotification(notification);
-		}else if(channel.name().equals("SMS")) {
-			Sms sms = Sms.getInstance();
-			sms.receiveNotification(notification);
-		}
-
-		
-	}
+	
 
 }

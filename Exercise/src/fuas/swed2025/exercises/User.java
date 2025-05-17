@@ -73,6 +73,8 @@ public class User {
 	
 	public void receiveNotification(Notification notification){
 		
+		System.out.println("NotificationId: " + notification.getId() + "Notification: " +notification.getMessage());
+		
 		
 	}
 

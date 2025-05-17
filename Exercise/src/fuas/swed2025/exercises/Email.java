@@ -24,9 +24,5 @@ public class Email implements CommunicationChannel {
 		
 	}
 
-	@Override
-	public Notification receiveNotification(Notification notification) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
