@@ -16,6 +16,8 @@ public class Sms implements CommunicationChannel{
 
 	@Override
 	public void sendNotification(User user, Notification notification) {
+		System.out.println("Notification send throughh SMS Channel.");
+		System.out.println("Notification sent to: " + user.getUserName());
 		user.receiveNotification(notification);
 		
 	}

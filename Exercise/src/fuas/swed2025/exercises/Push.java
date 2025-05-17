@@ -16,6 +16,8 @@ public class Push implements CommunicationChannel {
 
 	@Override
 	public void sendNotification(User user , Notification notification) {
+		System.out.println("Notification sent through Push Channel.");
+		System.out.println("Notification sent to: " + user.getUserName());
 		user.receiveNotification(notification);
 		
 	}

@@ -16,7 +16,7 @@ public class NotificationService {
 	}
 
     public void deliverNotification(Channel channel, User user, Notification notification) {
-        CommunicationChannel communicationChannel;
+        CommunicationChannel communicationChannel=null;
 
         switch (channel) {
             case EMAIL:
@@ -29,7 +29,7 @@ public class NotificationService {
                 communicationChannel = Sms.getInstance();
                 break;
             default:
-                throw new IllegalArgumentException("Unknown channel: " + channel);
+                System.out.println("Unknown channel: " + channel);
         }
 
         communicationChannel.sendNotification(user, notification);

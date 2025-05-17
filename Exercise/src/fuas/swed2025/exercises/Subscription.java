@@ -15,7 +15,7 @@ public class Subscription {
 		id = ++idCounter;
 		this.frequency= frequency;
 		this.channel = channel;
-		this.lastChecked =0;
+		this.lastChecked =System.currentTimeMillis();
 		this.lastContent = "";
 		this.website = new Website(url,"");
 	}

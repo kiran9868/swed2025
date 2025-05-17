@@ -1,17 +1,22 @@
 package fuas.swed2025.exercises;
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.ArrayList;
 
-public class Controller {
+/**
+ * A controller class to perform the content change of a website.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
+ * */
+
+public class Controller extends Thread {
 
 	private static Controller controller;
-
-	private Map<Integer, User> users;
+	List<User> users;
 
 	private Controller() {
-		users = new HashMap<>();
+		users = new ArrayList<>();
 	}
 
 	public static Controller getInstance() {
@@ -23,27 +28,33 @@ public class Controller {
 	}
 
 	public void addUser(User user) {
-		users.put(user.getUserId(), user);
+		users.add(user);
 	}
 
-	public void performCheck() {
+	@Override
+	public void run() {
+	    try {
+	        while (true) {
+	            for (User user : users) {
+	                List<Subscription> sub = user.getSubscription();
 
-		for (User user : users.values()) {
-			List<Subscription> sub = user.getSubscription();
+	                for (Subscription s : sub) {
+	                    long now = System.currentTimeMillis();
+	                    long interval = s.getFrequency().getIntervalMillis();
+	                    String currentContent = s.getWebsite().getContent();
 
-			for (Subscription s : sub) {
-				long now = System.currentTimeMillis();
-				long interval = s.getFrequency().getIntervalMillis();
-				String currentContent = s.getWebsite().getContent();
-
-				if (now - s.getLastChecked() >= interval && !(currentContent.equals(s.getLastContent()))) {
-					Notification n = new Notification("Website content changed!!");
-					NotificationService.getInstance().deliverNotification(s.getChannel(), user, n);
-
-				}
-
-			}
-		}
+	                    if (now - s.getLastChecked() >= interval && !currentContent.equals(s.getLastContent())) {
+	                        Notification n = new Notification("Website content changed!!");
+	                        NotificationService.getInstance().deliverNotification(s.getChannel(), user, n);
+	                        s.updateLastChecked();
+	                        s.updateLastContent(currentContent);
+	                    }
+	                }
+	            }
+	            Thread.sleep(30000);  
+	        }
+	    } catch (InterruptedException e) {
+	        System.out.println("InterruptedException: " +e.getMessage());
+	    }
 	}
-
 }
