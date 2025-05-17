@@ -1,5 +1,16 @@
 package fuas.swed2025.exercises;
 
+/**
+ * Subscription class which contains id url frequency Channel Website timestamp of last seen
+ * and the content in website which was last seen.
+ * 
+ * This class is used by User to record the website which they have subscribed to.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
+ * 
+ * */
+
 public class Subscription {
 	
 	private static int idCounter =0;

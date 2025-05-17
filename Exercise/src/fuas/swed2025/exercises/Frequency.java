@@ -1,5 +1,14 @@
 package fuas.swed2025.exercises;
 
+/**
+ * Represents the frequency at which a subscribed website should be checked for updates.
+ * Each enum constant defines a specific time interval in milliseconds.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
+ * 
+ */
+
 public enum Frequency {
 	SEC(5_000L),
     HOURLY(3600_000L),

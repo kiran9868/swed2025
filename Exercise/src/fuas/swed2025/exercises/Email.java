@@ -1,7 +1,10 @@
 package fuas.swed2025.exercises;
 
 /**
- * A class E-Mail that implements the Communication Channel
+ * A class E-Mail that implements the Communication Channel.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
  * */
 
 public class Email implements CommunicationChannel {

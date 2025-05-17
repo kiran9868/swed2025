@@ -10,11 +10,9 @@ public class Main {
 		
 	   User user = new User("Kiran","regmikiran1@gmail.com");
 	   user.registerWebsite("google.com",Frequency.SEC ,Channel.PUSH);
+	   user.registerWebsite("facebook.com", Frequency.SEC, Channel.EMAIL);
 	   
-	   User user1 = new User("Regmi","regmikiran1@gmail.com");
-	   user1.registerWebsite("faceboook.com", Frequency.SEC, Channel.SMS);
-	   
-	   Controller controller = Controller.getInstance();
+	   Controller controller = new Controller();
 	   controller.setDaemon(true);
 	   controller.addUser(user);
 	   
@@ -30,9 +28,11 @@ public class Main {
 	   System.out.print("Enter the content of a Website: ");
 	   str = sc.nextLine();
 	   
-	   user.getSubscription().get(0).updateLastContent(str);
 	   
-	   if(str.toUpperCase().equals("q")) {
+	   
+	   user.getSubscription().get(0).getWebsite().setContent(str);
+	   
+	   if(str.toUpperCase().equals("Q")) {
 		   break;
 	   }
 	   

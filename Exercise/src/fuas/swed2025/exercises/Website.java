@@ -1,5 +1,12 @@
 package fuas.swed2025.exercises;
 
+/**
+ * Website class with url and a Content
+ * 
+ * @author Kiran
+ * @version 1.0
+ * */
+
 public class Website {
 	
 	private String url;

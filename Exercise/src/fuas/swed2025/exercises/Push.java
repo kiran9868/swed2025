@@ -1,5 +1,12 @@
 package fuas.swed2025.exercises;
 
+/**
+ * A class Push that implements the Communication Channel and implements the method.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
+ * */
+
 public class Push implements CommunicationChannel {
 
 	private static Push push;
@@ -16,7 +23,7 @@ public class Push implements CommunicationChannel {
 
 	@Override
 	public void sendNotification(User user , Notification notification) {
-		System.out.println("Notification sent through Push Channel.");
+		System.out.println("\nNotification sent through Push Channel.");
 		System.out.println("Notification sent to: " + user.getUserName());
 		user.receiveNotification(notification);
 		

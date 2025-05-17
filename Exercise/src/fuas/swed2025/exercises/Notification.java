@@ -1,5 +1,14 @@
 package fuas.swed2025.exercises;
 
+/**
+ * Class to describe the structure of a Notification which contains id and message.
+ * 
+ * @author Kiran Regmi
+ * @version 1.0
+ * 
+ * 
+ * */
+
 public class Notification {
 	private static int idCounter = 0;
 	private int id;
