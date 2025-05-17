@@ -27,6 +27,7 @@ public class Email implements CommunicationChannel {
 	 * */
 	
 	public static Email getInstance() {
+		
 		if(email == null) {
 			email = new Email();
 		}
