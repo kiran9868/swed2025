@@ -11,7 +11,7 @@ public class Email implements CommunicationChannel {
 	
 	private static Email email;
 	
-	/**
+	/*
 	 * private constructor so that other cannot initialize it.
 	 * */
 	

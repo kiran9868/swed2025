@@ -28,7 +28,7 @@ public class Controller extends Thread {
 	@Override
 	public void run() {
 
-		try {
+		
 			while (true) {
 				for (User user : users) {
 					List<Subscription> sub = user.getSubscription();
@@ -46,10 +46,12 @@ public class Controller extends Thread {
 						}
 					}
 				}
+				try {
 				Thread.sleep(3000);
+				}catch(InterruptedException e) {
+					break;
+				}
 			}
-		} catch (InterruptedException e) {
-			System.out.println("InterruptedException: " + e.getMessage());
-		}
+		} 
+		
 	}
-}

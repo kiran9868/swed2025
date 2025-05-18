@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
-		String str;
+	   Scanner sc = new Scanner(System.in);
+	   String str;
 		
 	   User user = new User("Kiran","regmikiran1@gmail.com");
 	   user.registerWebsite("google.com",Frequency.SEC ,Channel.PUSH);
 	   user.registerWebsite("facebook.com", Frequency.SEC, Channel.EMAIL);
 	   
 	   User user1 = new User("Regmi","regmi@gmail.com");
-	   user1.registerWebsite("twitter.de", Frequency.SEC, Channel.EMAIL);
+	   user1.registerWebsite("twitter.de", Frequency.MSEC, Channel.EMAIL);
 	   
 	   Controller controller = new Controller();
 	   controller.setDaemon(true);
