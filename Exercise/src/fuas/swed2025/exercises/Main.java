@@ -41,6 +41,7 @@ public class Main {
 	   user.getSubscription().get(0).getWebsite().setContent(str);
 	   
 	   if(str.toUpperCase().equals("Q")) {
+		   System.out.println("Program terminated");
 		   break;
 	   }
 	   
@@ -48,11 +49,7 @@ public class Main {
 	   
 	   }
 	   sc.close();
-
 	   
-	   
-	   
-		
 	}
 
 }

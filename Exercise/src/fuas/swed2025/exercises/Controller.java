@@ -27,8 +27,6 @@ public class Controller extends Thread {
 
 	@Override
 	public void run() {
-
-		
 			while (true) {
 				for (User user : users) {
 					List<Subscription> sub = user.getSubscription();
