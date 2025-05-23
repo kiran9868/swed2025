@@ -10,7 +10,7 @@ package fuas.swed2025.exercises;
  */
 
 public enum Frequency {
-	MSEC(5_000L),
+	SEC(5_000L),
     HOURLY(3600_000L),
     DAILY(86_400_000L),
     WEEKLY(604_800_000L),

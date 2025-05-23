@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class User {
 	
 	private static int idCounter = 0;
-	
 	private int userId;
 	private String userName;
 	private String email;
@@ -68,6 +67,7 @@ public class User {
 		
 	}
 	
+	
 	/**
 	 * User can modify their Subscriptions.
 	 * @param id subscription id to be modified
@@ -86,9 +86,11 @@ public class User {
 		
 	}
 	
+	
 	/**
 	 * User can cancel the Subscription of a Website.
 	 * @param id the id of a Subscription that needs to be canceled.
+	 * 
 	 * */
 	
 	public void cancelSubscription(int id) {
@@ -99,15 +101,17 @@ public class User {
 		}
 	}
 	
-	/*
+	
+	/**
 	 * User receive a Notification if there is any change in the website content.
+	 *@Param notification the notification to be received by an user.
+	 *
 	 * */
 	
 	public void receiveNotification(Notification notification){
 		
-		System.out.println("NotificationId:" + notification.getId() + " Notification:" +notification.getMessage());
-		
-		
+	System.out.println("NotificationId:" + notification.getId() + " Notification:" +notification.getMessage());
+			
 	}
 
 }
