@@ -20,9 +20,7 @@ public class Main {
 	   controller.addUser(user);
 	   controller.addUser(user1);
 	   
-	   user.getSubscription().get(0).getWebsite().setContent("Old Content"); 
-	           
-	   
+	   user.getSubscription().get(0).getWebsite().setContent("Old Content");     
 	   user.getSubscription().get(0).getWebsite().setContent("Hello");
 	   
        user1.getSubscription().get(0).getWebsite().setContent("Old Content"); 
@@ -43,13 +41,8 @@ public class Main {
 	   if(str.toUpperCase().equals("Q")) {
 		   System.out.println("Program terminated");
 		   break;
-	   }
-	   
-	   
-	   
+	   } 
 	   }
 	   sc.close();
-	   
 	}
-
 }
