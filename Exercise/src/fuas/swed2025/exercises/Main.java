@@ -17,12 +17,11 @@ public class Main {
 	   
 	   Controller controller = new Controller();
 	   controller.setDaemon(true);
+	   
 	   controller.addUser(user);
 	   controller.addUser(user1);
-	   
 	   user.getSubscription().get(0).getWebsite().setContent("Old Content");     
 	   user.getSubscription().get(0).getWebsite().setContent("Hello");
-	   
        user1.getSubscription().get(0).getWebsite().setContent("Old Content"); 
 	   user1.getSubscription().get(0).getWebsite().setContent("Hello");
 	   
