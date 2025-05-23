@@ -26,13 +26,11 @@ public class Main {
 	   user1.getSubscription().get(0).getWebsite().setContent("Hello");
 	   
 	   controller.start();
-	   
+	    
 	   while(true) {
 		
 	   System.out.print("Enter the content of a Website: ");
 	   str = sc.nextLine();
-	   
-	   
 	   
 	   user.getSubscription().get(0).getWebsite().setContent(str);
 	   
