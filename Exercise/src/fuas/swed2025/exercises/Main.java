@@ -9,8 +9,8 @@ public class Main {
 	   String str;
 		
 	   User user = new User("Kiran","regmikiran1@gmail.com");
-	   user.registerWebsite("google.com",Frequency.SEC ,Channel.PUSH);
-	   user.registerWebsite("facebook.com", Frequency.SEC, Channel.EMAIL);
+	   user.registerWebsite("google.com",Frequency.MSEC,Channel.PUSH);
+	   user.registerWebsite("facebook.com", Frequency.MSEC, Channel.EMAIL);
 	   
 	   User user1 = new User("Regmi","regmi@gmail.com");
 	   user1.registerWebsite("twitter.de", Frequency.MSEC, Channel.EMAIL);
@@ -24,7 +24,6 @@ public class Main {
 	   user.getSubscription().get(0).getWebsite().setContent("Hello");
        user1.getSubscription().get(0).getWebsite().setContent("Old Content"); 
 	   user1.getSubscription().get(0).getWebsite().setContent("Hello");
-	   
 	   
 	   controller.start();
 	   

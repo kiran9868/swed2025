@@ -3,16 +3,16 @@ package fuas.swed2025.exercises;
 /**
  * Subscription class which contains id url frequency Channel Website timestamp of last seen
  * and the content in website which was last seen.
- * 
+ *
  * This class is used by User to record the website which they have subscribed to.
- * 
+ *
  * @author Kiran Regmi
  * @version 1.0
- * 
+ *
  * */
 
 public class Subscription {
-	
+
 	private static int idCounter =0;
 	private int id=0;
 	private String url;
@@ -21,7 +21,7 @@ public class Subscription {
 	private Website website;
 	private long lastChecked;
 	private String lastContent;
-	
+
 	Subscription(String url, Frequency frequency, Channel channel){
 		id = ++idCounter;
 		this.frequency= frequency;
@@ -62,23 +62,23 @@ public class Subscription {
 	public void setChannel(Channel channel) {
 		this.channel = channel;
 	}
-	
-	 public long getLastChecked() { 
-		 return lastChecked; 
+
+	 public long getLastChecked() {
+		 return lastChecked;
 	}
 
 	public void updateLastChecked() {
 	     this.lastChecked = System.currentTimeMillis();
 	}
-	
+
 	public String getLastContent() {
 		return lastContent;
 	}
-	
+
 	public void updateLastContent(String content) {
 		this.lastContent = content;
 	}
-	
+
 	public Website getWebsite() {
 		return website;
 	}

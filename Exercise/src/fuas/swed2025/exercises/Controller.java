@@ -1,29 +1,28 @@
 package fuas.swed2025.exercises;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A controller class to perform check of  the content change of a website for all users.
- * 
+ *
  * @author Kiran Regmi
  * @version 1.0
  */
 
 public class Controller extends Thread {
 
-	
 	private List<User> users;
 
 	public Controller() {
 		users = new ArrayList<>();
 	}
 
-	
 
 	public void addUser(User user) {
 		users.add(user);
 	}
+
 
 	@Override
 	public void run() {
@@ -41,15 +40,19 @@ public class Controller extends Thread {
 							NotificationService.getInstance().deliverNotification(s.getChannel(), user, n);
 							s.updateLastChecked();
 							s.updateLastContent(currentContent);
+						}else {
+							s.updateLastChecked();
 						}
+
+
 					}
 				}
 				try {
-				Thread.sleep(3000);
+				Thread.sleep(10000);
 				}catch(InterruptedException e) {
 					break;
 				}
 			}
-		} 
-		
+		}
+
 	}
